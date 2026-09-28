@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>스쿨 럭키포인트</title>
+    <meta name="theme-color" content="#2f7d32" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./assets/logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="./assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
+    <link rel="preload" href="./assets/mascot-name.png" as="image" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <noscript>
+      <div style="padding:14px;margin:14px;border:1px solid #999;border-radius:12px">
+        이 앱은 자바스크립트가 필요합니다. 브라우저에서 자바스크립트를 허용해 주세요.
+      </div>
+    </noscript>
+    <div class="app">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand__title-wrap">
+            <img class="brand__logo" src="./assets/logo.png" alt="스쿨 럭키포인트" width="88" height="88" />
+            <div class="brand__text">
+              <div class="brand__title" aria-hidden="true">스쿨 럭키포인트</div>
+              <div class="brand__subtitle">
+                <span id="school-name">학교 미설정</span><span id="online-hint"></span> · 통계 · 상점 · 보상
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="tabs" aria-label="탭">
+          <button class="tab" data-route="students" aria-current="page">홈</button>
+          <button class="tab" data-route="teacher">학생회</button>
+          <button class="tab" data-route="rewards">보상 상점</button>
+          <button class="tab" data-route="class">통계</button>
+          <button class="tab" data-route="settings">설정</button>
+        </nav>
+      </header>
+
+      <main class="content" id="app-root"></main>
+    </div>
+
+    <div id="toast-host" class="toast-host" aria-live="polite" aria-atomic="true"></div>
+
+    <dialog id="loading-overlay" class="loading-overlay" aria-hidden="true">
+      <div class="loading-overlay__card">
+        <img class="loading-overlay__mascot" src="./assets/loading-mascot.png" alt="로딩 중" />
+        <div class="loading-overlay__msg" id="loading-msg">처리하는 중이에요…</div>
+        <div class="loading-overlay__bar" aria-hidden="true"><i></i></div>
+        <div class="loading-overlay__dots" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="modal" id="modal">
+      <form method="dialog" class="modal__card">
+        <div class="modal__head">
+          <div class="modal__title" id="modal-title">제목</div>
+          <button type="button" class="icon-btn" id="modal-close-btn" aria-label="닫기">✕</button>
+        </div>
+        <div class="modal__body" id="modal-body"></div>
+        <div class="modal__actions" id="modal-actions">
+          <button class="btn" value="cancel">닫기</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="./boot.js"></script>
+  </body>
+</html>

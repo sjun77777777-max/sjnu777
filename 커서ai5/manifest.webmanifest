@@ -1,0 +1,23 @@
+{
+  "name": "스쿨 럭키포인트",
+  "short_name": "럭키포인트",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4faf0",
+  "theme_color": "#2f7d32",
+  "icons": [
+    {
+      "src": "./assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
+
